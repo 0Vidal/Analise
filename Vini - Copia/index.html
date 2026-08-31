@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Netflix">NETFLIX</a>
+    <nav aria-label="Navegação principal">
+      <a href="#">Início</a>
+      <a href="#">Séries</a>
+      <a href="#">Filmes</a>
+      <a href="#">Novidades</a>
+      <a href="#">Minha lista</a>
+    </nav>
+    <div class="actions">
+      <button class="plain" aria-label="Pesquisar">⌕</button>
+      <button class="plain" aria-label="Notificações">♢</button>
+      <button id="profileButton" class="profile" aria-label="Abrir assistente" aria-expanded="false" aria-controls="assistantPanel">
+        <img src="assets/carinha-assistente.png" alt="">
+        <i>⌄</i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">NETFLIX APRESENTA</p>
+        <h1 class="featured-title">
+          <span>O</span>
+          <strong>MENTALISTA</strong>
+        </h1>
+        <h2>Novos episódios disponíveis</h2>
+        <p>O Mentalista acompanha Patrick Jane, um ex-falso médium que usa observação e dedução para resolver crimes.</p>
+        <div class="hero-buttons">
+          <button class="watch">▶ &nbsp;Assistir</button>
+          <button class="info">ⓘ &nbsp;Mais informações</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <h2>Populares agora</h2>
+      <div class="carousel">
+        <button class="carousel-button previous" aria-label="Ver títulos anteriores">‹</button>
+
+        <div class="cards" id="movieCarousel">
+          <article class="card c1" aria-label="Os Mercenários"></article>
+          <article class="card c2" aria-label="A Cinco Passos de Você"></article>
+          <article class="card c3" aria-label="Supernatural"></article>
+          <article class="card c4" aria-label="Ratatouille"></article>
+          <article class="card c5" aria-label="Procurando Nemo"></article>
+          <article class="card c6" aria-label="The Office"></article>
+        </div>
+
+        <button class="carousel-button next" aria-label="Ver mais títulos">›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Menu do assistente -->
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="assistantPanel" class="assistant" aria-hidden="true" aria-labelledby="assistantTitle">
+    <button id="closeButton" class="close" aria-label="Fechar assistente">×</button>
+    <div class="assistant-head">
+      <div class="bot-face">•‿•</div>
+      <div>
+        <h2 id="assistantTitle">Olá, Usuario! <small>BETA</small></h2>
+        <p>Eu sou seu assistente de entretenimento.<br>Como posso te ajudar hoje?</p>
+      </div>
+    </div>
+
+    <h3>Comandos sugeridos</h3>
+    <div class="suggestions">
+      <button data-recommendation="leve"><i class="pink">☺</i> Quero indicação de um filme leve <span>›</span></button>
+      <button data-recommendation="suspense"><i class="blue">♧</i> Me indique uma série de suspense <span>›</span></button>
+      <button data-recommendation="romance"><i class="purple">♡</i> Quero algo romântico para assistir <span>›</span></button>
+      <button data-recommendation="familia"><i class="green">♙</i> Sugira algo para ver com a família <span>›</span></button>
+      <button data-recommendation="acao"><i class="orange">♢</i> Quero um filme de ação emocionante <span>›</span></button>
+    </div>
+
+    <div class="result">
+      <p>Sugestão para você</p>
+      <article>
+        <div id="resultPoster" class="poster default-poster" role="img" aria-label="The Office"></div>
+        <div>
+          <h3 id="resultTitle">The Office</h3>
+          <small id="resultDetails">2005 &nbsp; 9 temporadas &nbsp; 203 episódios</small>
+          <p id="resultDescription">Uma série de comédia sobre trabalho, caos e cafés fortes.</p>
+          <button class="watch small">▶ Assistir</button>
+        </div>
+      </article>
+    </div>
+
+    <form id="messageForm" class="message">
+      <input id="messageInput" aria-label="Mensagem" placeholder="Digite sua mensagem...">
+      <button aria-label="Enviar">➤</button>
+    </form>
+    <p class="note">▣ Este é um assistente demonstrativo.</p>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
