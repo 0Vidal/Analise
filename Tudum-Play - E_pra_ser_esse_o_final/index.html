@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tudum-Play - catálogo de filmes e séries">
+  <title>Tudum-Play</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Tudum-Play">Tudum-Play</a>
+
+    <nav aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#catalogo">Séries</a>
+      <a href="#catalogo">Filmes</a>
+      <a href="#catalogo">Novidades</a>
+      <a href="#catalogo">Minha lista</a>
+    </nav>
+
+    <div class="actions">
+      <button id="searchButton" class="plain" aria-label="Pesquisar" title="Pesquisar">⌕</button>
+      <button class="plain" aria-label="Notificações" title="Notificações">♢</button>
+
+      <button id="profileButton" class="profile" aria-label="Abrir assistente" aria-expanded="false" aria-controls="assistantPanel">
+        <img src="poster/carinha-assistente.png" alt="">
+        <span>⌄</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="searchBox" class="search-box">
+    <input id="searchInput" type="search" placeholder="Pesquisar filmes e séries..." aria-label="Pesquisar filmes e séries">
+    <button id="closeSearch" aria-label="Fechar pesquisa">×</button>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TUDUM-PLAY APRESENTA</p>
+
+        <h1 id="featuredTitle" class="featured-title">O MENTALISTA</h1>
+        <h2 id="featuredSubtitle">Novos episódios disponíveis</h2>
+
+        <p id="featuredDescription">
+          O Mentalista acompanha Patrick Jane, um ex-falso médium que usa observação e dedução para resolver crimes.
+        </p>
+
+        <div class="hero-buttons">
+          <button id="watchButton" class="watch">▶ Assistir</button>
+          <button id="infoButton" class="info">ⓘ Mais informações</button>
+        </div>
+      </div>
+
+      <div id="featuredPoster" class="featured-poster" role="img" aria-label="O Mentalista"></div>
+    </section>
+
+    <section id="catalogo" class="catalog">
+      <div class="section-title">
+        <h2>Populares agora</h2>
+        <p>Clique em um título para colocá-lo em destaque.</p>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel-button previous" aria-label="Ver títulos anteriores">‹</button>
+
+        <div id="movieCarousel" class="cards"></div>
+
+        <button class="carousel-button next" aria-label="Ver mais títulos">›</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close" aria-label="Fechar">×</button>
+      <h2 id="modalTitle">Título</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <aside id="assistantPanel" class="assistant" aria-hidden="true" aria-labelledby="assistantTitle">
+    <button id="closeButton" class="close" aria-label="Fechar assistente">×</button>
+
+    <div class="assistant-head">
+      <div class="bot-face">•‿•</div>
+
+      <div>
+        <h2 id="assistantTitle">Olá! <small>BETA</small></h2>
+        <p>Eu sou seu assistente de entretenimento. Como posso ajudar?</p>
+      </div>
+    </div>
+
+    <h3>Sugestões</h3>
+
+    <div class="suggestions">
+      <button data-message="Quero um filme leve e divertido">☺ Filme leve</button>
+      <button data-message="Quero uma série de suspense">♧ Série de suspense</button>
+      <button data-message="Quero algo romântico">♡ Romance</button>
+      <button data-message="Quero algo para assistir com a família">♙ Família</button>
+      <button data-message="Quero um filme de ação">♢ Ação</button>
+      <button data-message="Quero uma comédia">☻ Comédia</button>
+      <button data-message="Quero ficção científica">✦ Ficção científica</button>
+      <button data-message="Quero uma animação">★ Animação</button>
+    </div>
+
+    <div class="result">
+      <p>Sugestão para você</p>
+
+      <article>
+        <div id="resultPoster" class="poster"></div>
+
+        <div>
+          <h3 id="resultTitle">The Office</h3>
+          <small id="resultDetails">2005 · 9 temporadas</small>
+          <p id="resultDescription">Uma comédia sobre o cotidiano de um escritório.</p>
+
+          <button id="resultWatch" class="watch small">▶ Ver opções</button>
+        </div>
+      </article>
+    </div>
+
+    <form id="messageForm" class="message">
+      <input id="messageInput" aria-label="Mensagem" placeholder="Digite sua mensagem...">
+      <button aria-label="Enviar">➤</button>
+    </form>
+
+    <p class="note">▣ Assistente demonstrativo do Tudum-Play.</p>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
